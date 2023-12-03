@@ -1,6 +1,7 @@
 import { styled } from "..";
 
 export const SuccessContainer = styled('main',{
+    
     display:'flex',
     flexDirection:'column',
     alignItems:'center',
@@ -36,11 +37,11 @@ export const SuccessContainer = styled('main',{
 })
 
 export const ImageContainer = styled('div',{
-    width:'100%',
-    maxWidth:130,
-    height:145,
+    
+    width:130,
+    height:130,
     background:"linear-gradient(180deg, #1ea483 0%, #7465d4 100%)",
-    borderRadius:8,
+    borderRadius:'50%',
     padding:'0.25rem',
     marginTop:'4rem',
 
@@ -49,6 +50,30 @@ export const ImageContainer = styled('div',{
     justifyContent:'center',
 
     img:{
-        objectFit:'cover'
+        objectFit:'cover',
+        width:'100%',
     },
+
+    '&:not(:first-child)':{
+        marginLeft:"-1.5rem"
+    },
+    
+
+    transition:".2s ease ",
+    '&:hover': {
+        
+        boxShadow: ' -4px 0px 30px rgba(0, 0, 0, 0.8)',
+        transform: 'translateY(-10%)',
+    },
+    
+    '@md':{
+        width:110,
+        height:110
+    }
+
+})
+
+export const ImagesList = styled('div',{
+    display:"flex",
+    justifyContent:"center",
 })

@@ -26,7 +26,7 @@ export interface ICart {
   description: string
   unit_amount: number
   formattedPrice: string
-
+  defaultPriceId:string
 }
 
 
@@ -43,10 +43,53 @@ export default function Home({ products }: HomeProps) {
 
   const [sliderRef] = useKeenSlider({
     slides: {
-      perView: 3, // mostra tres produtos por vez
+      perView: 3.2, // mostra tres produtos por vez
       spacing: 48,
     },
     loop: false,
+
+    breakpoints:{
+      '(max-width: 1220px)': {
+        slides:{
+          perView:3.1,
+          spacing:20,
+        }
+        
+      },
+
+      '(max-width: 1200px)': {
+        slides:{
+          perView:2.5,
+          spacing:20,
+        }
+        
+      },
+      '(max-width: 992px)': {
+        slides:{
+          perView:2.1,
+          spacing:20,
+        }
+        
+      },
+
+      '(max-width: 768px)': {
+        slides:{
+          perView:1.5,
+          spacing:20,
+        }
+        
+      },
+
+      '(max-width: 576px)': {
+        slides:{
+          perView:1.1,
+          spacing:20,
+        }
+        
+      }
+
+      
+    }
 
   })
 
@@ -63,12 +106,12 @@ export default function Home({ products }: HomeProps) {
       price: product.price,
       sku: product.id,
       currency: 'BRL',
-      price_id: product.priceId,
+      price_id: product.defaultPriceId,
       description: product.description,
-      formattedPrice: product.formattedPrice
+      formattedPrice: product.formattedPrice,
+
     }
 
-    console.log(payload)
     addItem(payload, {
       count: 1
     })
@@ -137,6 +180,7 @@ export const getStaticProps: GetStaticProps = async () => { // SSG (static site 
         currency: 'BRL',
       }).format((price.unit_amount as number) / 100),
       defaultPriceId: price.id,
+
     }
   })
 

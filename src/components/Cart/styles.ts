@@ -7,13 +7,19 @@ export const DialogContent = styled(Dialog.Content,{
     gap:'2rem',
     padding:'2rem',
     backgroundColor:'$gray800',
-    width:500,
+    width:'35rem',
     height:'100vh',
     position:'fixed',
     right:0,
     top:0,
     border:'none',
     boxShadow: "-4px 0px 30px rgba(0, 0, 0, 0.8)",
+
+    overflowY:"auto",
+
+    '@sm':{
+        width:"100%",
+    }
 })
 
 export const DialogTrigger = styled(Dialog.Trigger,{
@@ -40,7 +46,7 @@ export const DialogTrigger = styled(Dialog.Trigger,{
 
 
 export const DialogClose = styled(Dialog.Close,{
-    width:40,
+    display:"inline-block",
     backgroundColor:'transparent',
     border:'none',
     marginLeft:'auto',
@@ -51,6 +57,22 @@ export const DialogClose = styled(Dialog.Close,{
         background:'transparent',
         border:'none',
         color:'$gray100',
+    }
+})
+
+export const BackCatalog = styled(Dialog.Close,{
+    display:"inline-block",
+    backgroundColor:"transparent",
+    border:"none",
+
+
+    button:{
+        fontSize:"$lx",
+        backgroundColor:"transparent",
+        border:"none",
+        color:"$green500",
+        cursor:"pointer",
+        fontWeight:"600",
     }
 })
 
@@ -69,16 +91,24 @@ export const CartItem = styled('div',{
     '.imageCartContainer':{
         display:'flex',
         flexDirection:'column',
-        width:101,
-        height:93,
+        alignItems:"center",
+        justifyContent:"center",
+        width:120,
         background:"linear-gradient(180deg, #1ea483 0%, #7465d4 100%)",
         borderRadius:6,
+
+        img:{
+            objectFit:"cover",
+            width:"100%",
+        }
     },
 
     '.infoCartContainer':{
         display:'flex',
         flexDirection:"column",
+        gap:'1rem',
         alignItems:"flex-start",
+        
 
         button:{
             border:"none",
@@ -86,11 +116,32 @@ export const CartItem = styled('div',{
             fontSize:'1rem',
             fontWeight:600,
             backgroundColor:"transparent",
-            color:'$green300',
+            color:'$green500',
             cursor:'pointer',
+
+            '&:hover':{
+
+                color:'$green300' 
+            }
         },
         p:{
             fontSize:'$md',
+        },
+
+        '.amount-product':{
+            display:'flex',
+            gap:'.7rem',
+            backgroundColor:"$gray900",
+            padding:"6px",
+            borderRadius:"6px",
+
+            button:{
+                display:"flex",
+                alignItems:"center",
+                backgroundColor:"$green500",
+                color:"$white",
+                borderRadius:"3px",
+            }
         }
     }
 })
@@ -131,4 +182,24 @@ export const FooterContainer = styled('footer',{
             cursor:'not-allowed'
         }
     },
+
+    '.info-card':{
+        marginTop:"1rem",
+        textAlign:"center",
+        fontSize:'.9rem',
+        backgroundColor:"$gray900",
+        padding:".7rem",
+        borderRadius:"6px",
+    }
+})
+
+
+export const CartEmpity = styled("div",{
+    marginTop:"2rem",
+    display:"flex",
+    flexDirection:"column",
+    gap:"1rem",
+    textAlign:"center",
+    justifyContent:"center",
+    alignItems:"center"
 })

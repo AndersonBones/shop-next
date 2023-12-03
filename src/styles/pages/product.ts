@@ -1,20 +1,28 @@
 import { styled } from "..";
 
 export const ProductContainer = styled('main', {
-    display:'grid',
-    gridTemplateColumns:'1fr 1fr',
+    display:"flex",
     alignItems:"stretch",
+    justifyContent:"space-between",
     gap:'4rem',
+    padding:".8rem",   
 
     maxWidth:1180,
     margin:'0 auto',
+
+
+
+    '@lg': {
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+    },
 
 })
 
 export const ImageContainer = styled('div',{
     width:'100%',
-    height:656,
-    maxWidth:576,
+    height: 'calc(656px - 0.25rem)',
     background:"linear-gradient(180deg, #1ea483 0%, #7465d4 100%)",
     borderRadius:8,
     padding:'0.25rem',
@@ -23,12 +31,32 @@ export const ImageContainer = styled('div',{
     alignItems:"center",
     justifyContent:"center",
 
+    '@lg': {
+        maxWidth: '80%',
+        height: 'calc(456px - 0.25rem)',
+    },
+    
+    '@md': {
+        height: 'calc(356px - 0.25rem)',
+    },   
+
+    '@sm':{
+        maxWidth:"100%",
+    },
+
     img:{
         objectFit:"cover",
+
+        '@md': {
+            width: 330,
+            height: 280,
+        },
     },
+
 })
 
 export const ProductDetails = styled('div',{
+    width:"100%",
     display:'flex',
     flexDirection:'column',
 
@@ -45,7 +73,8 @@ export const ProductDetails = styled('div',{
     },
 
     p:{
-        marginTop:'2.5rem',
+        marginTop:'2rem',
+        marginBottom:"1rem",
         fontSize:"$md",
         lineHeight:1.6,
         color:"$gray300"
@@ -72,6 +101,17 @@ export const ProductDetails = styled('div',{
             cursor:'not-allowed',
         }
     },
+
+    '@lg':{
+        margin:"auto",
+        maxWidth:'80%',
+    },
+
+    '@sm':{
+        maxWidth:"100%",
+    },
+
+
 })
 
 

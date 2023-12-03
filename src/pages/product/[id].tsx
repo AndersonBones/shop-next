@@ -40,7 +40,7 @@ export default function Product({ product }: ProductProps) {
           price: product.price,
           sku: product.id,
           currency: 'BRL',
-          price_id: product.priceId,
+          price_id: product.defaultPriceId,
           description: product.description,
           formattedPrice:product.formattedPrice
         }
@@ -75,10 +75,15 @@ export default function Product({ product }: ProductProps) {
             <Head>
                 <title>{product.name} | Ignite Shop</title>
             </Head>
+
+            
             <ProductContainer>
+                
                 <ImageContainer>
                     <Image src={product.imageUrl} width={520} height={480} alt='' />
                 </ImageContainer>
+
+                
 
                 <ProductDetails>
                     <h1>{product.name}</h1>
