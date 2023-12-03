@@ -35,6 +35,7 @@ export default function Cart() {
 
     const cartHasEmpity = products.length >= 1 // cart has empity?
 
+    
 
     const handleBuyProduct = async () => { // buy products 
 
