@@ -43,3 +43,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Preview
 
 ![image](https://github.com/AndersonBones/shop-next/assets/91613692/64a13c30-d9a9-401b-ba43-21ac3bbb0429)
+<a href="https://shop-next-sable.vercel.app/" target="_blank">Live Demo</a>
