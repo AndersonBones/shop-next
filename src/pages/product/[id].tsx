@@ -108,7 +108,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     return {
         paths: [
             {
-                params: { id: 'prod_P4gbrCxjt7BF9R' }
+                params: { id: 'prod_P4geDNWzdcu266' }
             }
         ],
         fallback: true
